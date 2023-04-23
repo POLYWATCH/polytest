@@ -12,7 +12,7 @@ import Container from "../../../components/Container/Container";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { NFT, ThirdwebSDK } from "@thirdweb-dev/sdk";
 import {
-  ETHERSCAN_URL,
+  
   MARKETPLACE_ADDRESS,
   NETWORK,
   NFT_COLLECTION_ADDRESS,
@@ -183,7 +183,7 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
                     <div className={styles.eventContainer}>
                       <Link
                         className={styles.txHashArrow}
-                        href={`${ETHERSCAN_URL}/tx/${event.transaction.transactionHash}`}
+                        href={`${event.transaction.transactionHash}`}
                         target="_blank"
                       >
                         ↗
@@ -361,7 +361,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const contract = await sdk.getContract(NFT_COLLECTION_ADDRESS);
 
-  const nft = await contract.erc721.get(tokenId);
+  const nft = await contract.erc1155.get(tokenId);
 
   let contractMetadata;
 
@@ -383,7 +383,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const contract = await sdk.getContract(NFT_COLLECTION_ADDRESS);
 
-  const nfts = await contract.erc721.getAll();
+  const nfts = await contract.erc1155.getAll();
 
   const paths = nfts.map((nft) => {
     return {

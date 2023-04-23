@@ -1,11 +1,10 @@
-.profileHeader {
-}
+
 
 .coverImage {
   width: 100%;
   background-color: #272a2d;
   height: 300px;
-  border-radius: 16px;
+  border-radius: 8px;
 }
 
 .profilePicture {

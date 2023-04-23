@@ -1,9 +1,9 @@
 .nftImage {
   /* Override default NFT renderer width */
-  width: 100% !important;
+  width: 105% !important;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
-  object-fit: cover;
+
 }
 
 .nftTokenId {
@@ -16,7 +16,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 100%;
+  max-width: 75%;
   color: #fff;
   font-family: inherit;
   vertical-align: inherit;
